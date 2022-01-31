@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"> </header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Update student</h1>
+            <div class="card-body">
+                <form th:action="@{/students/{id}(id=${student.id})}" th:object="${student}" method="post">
+                    <div class="form-group">
+                        <label >Student first name</label>
+                        <input type="text"
+                               name="firstName"
+                               th:field="*{firstName}"
+                               class="forrm-control"
+                               placeholder="enter first name">
+                    </div>
+
+                    <div class="form-group">
+                        <label >Student flast name</label>
+                        <input type="text"
+                               name="lastName"
+                               th:field="*{lastName}"
+                               class="forrm-control"
+                               placeholder="enter last name">
+                    </div>
+
+                    <div class="form-group">
+                        <label >Student email</label>
+                        <input type="text"
+                               name="email"
+                               th:field="*{email}"
+                               class="forrm-control"
+                               placeholder="enter email">
+                    </div>
+
+                    <div class="box-footer">
+
+                        <button type="submit" class="btn btn-primary">
+                            submit
+                        </button>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
